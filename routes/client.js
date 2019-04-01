@@ -8,24 +8,25 @@ const ClientController = require("../controllers/client.controller");
 //User signin route - create a token and return to user
 router.post("/login", ClientController.login);
 router.post("/", ClientController.create);
+router.get("/teste", ClientController.get);
 
 /* GET users listing. */
-router.get("/", function(req, res, next) {
-  model.Client.findAll({})
-    .then(users =>
-      res.json({
-        error: false,
-        data: users
-      })
-    )
-    .catch(error =>
-      res.json({
-        error: true,
-        data: [],
-        error: error
-      })
-    );
-});
+// router.get("/", function(req, res, next) {
+//   model.Client.findAll({})
+//     .then(users =>
+//       res.json({
+//         error: false,
+//         data: users
+//       })
+//     )
+//     .catch(error =>
+//       res.json({
+//         error: true,
+//         data: [],
+//         error: error
+//       })
+//     );
+// });
 
 // router.put("/:id", function(req, res, next) {
 //   const userId = req.params.id;

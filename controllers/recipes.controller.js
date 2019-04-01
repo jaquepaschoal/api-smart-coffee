@@ -1,7 +1,6 @@
-const { Client } = require("../models");
+const { Recipes } = require("../models");
 const authService = require("../services/auth.service");
 const { to, ReE, ReS } = require("../services/util.service");
-const JSON = require("circular-json");
 
 const create = async function(req, res) {
   const body = req.body;
@@ -28,9 +27,9 @@ const create = async function(req, res) {
 module.exports.create = create;
 
 const get = async function(req, res) {
-  let client = req.client;
-
-  return ReS(res, { client: JSON.stringify(Client) });
+  let recipes = req.recipes;
+  console.log(Recipes.getJWT());
+  //   return ReS(res, { recipe: Recipes.toWeb() });
 };
 module.exports.get = get;
 

@@ -32,7 +32,7 @@ const createClient = async clientInfo => {
     clientInfo.email = unique_key;
 
     [err, client] = await to(Client.create(clientInfo));
-    if (err) TE('Client already exists with that email.');
+    if (err) TE("Client already exists with that email.");
 
     return client;
   } else {
@@ -61,10 +61,6 @@ const authClient = async function(clientInfo) {
   }
 
   if (!client) TE("Not registered");
-
-  //   [err, client] = await to(client.comparePassword(clientInfo.password));
-
-  //   if (err) TE(err.message);
 
   return client;
 };
