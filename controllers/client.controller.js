@@ -30,7 +30,7 @@ module.exports.create = create;
 const get = async function(req, res) {
   let client = req.client;
 
-  return ReS(res, { client: JSON.stringify(Client) });
+  return ReS(res, { client: toWeb(Client) });
 };
 module.exports.get = get;
 

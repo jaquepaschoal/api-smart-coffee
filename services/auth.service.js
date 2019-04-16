@@ -32,6 +32,7 @@ const createClient = async clientInfo => {
     clientInfo.email = unique_key;
 
     [err, client] = await to(Client.create(clientInfo));
+    console.log(err);
     if (err) TE("Client already exists with that email.");
 
     return client;

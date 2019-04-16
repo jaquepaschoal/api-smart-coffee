@@ -27,9 +27,9 @@ const create = async function(req, res) {
 module.exports.create = create;
 
 const get = async function(req, res) {
-  let recipes = req.recipes;
-  console.log(Recipes.getJWT());
-  //   return ReS(res, { recipe: Recipes.toWeb() });
+  Recipes.findAll().then(recipes => {
+    return ReS(res, { recipes: recipes });
+  });
 };
 module.exports.get = get;
 
